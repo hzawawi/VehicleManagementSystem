@@ -2,9 +2,10 @@
 
 namespace VehicleSystem.Api.Controllers
 {
-    [RoutePrefix("api/vehicle")]
+    [RoutePrefix("vehicle")]
     public class VehicleController : Controller
     {
+        [HttpGet]
         public string HealthCheck()
         {
             return "up";
