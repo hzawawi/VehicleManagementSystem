@@ -31,5 +31,19 @@ namespace VehicleSystem.Api.Controllers
             }
         }
 
+
+        [HttpPut]
+        [Route("update/{id:long}")]
+        public bool Update(long id)
+        {
+            return true;
+        }
+
+        [HttpDelete]
+        [Route("delete/{id:long}")]
+        public bool Delete(long id)
+        {
+            return true;
+        }
     }
 }
