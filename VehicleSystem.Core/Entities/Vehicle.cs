@@ -2,7 +2,6 @@
 {
     public class Vehicle
     {
-
         public long Id { get; set; }
 
         public string Make { get; set; }

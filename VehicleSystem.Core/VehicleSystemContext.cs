@@ -6,6 +6,11 @@ namespace VehicleSystem.Core
 {
     public class VehicleSystemContext : DbContext
     {
+        public VehicleSystemContext() : base("VehicleSystem")
+        {
+
+        }
+
         public DbSet<Vehicle> Vehicles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder dbModelBuilder)
