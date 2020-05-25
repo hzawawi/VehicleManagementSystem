@@ -12,6 +12,10 @@ namespace VehicleSystem.Core
         }
 
         public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
+        public DbSet<Journey> Journeys { get; set; }
+        public DbSet<Sensor> Sensors { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder dbModelBuilder)
         {

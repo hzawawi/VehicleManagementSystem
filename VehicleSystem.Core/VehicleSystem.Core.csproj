@@ -48,9 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Driver.cs" />
+    <Compile Include="Entities\Journey.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\Sensor.cs" />
+    <Compile Include="Entities\SensorType.cs" />
     <Compile Include="Migrations\202005250403320_AddVehicleTable.cs" />
     <Compile Include="Migrations\202005250403320_AddVehicleTable.Designer.cs">
       <DependentUpon>202005250403320_AddVehicleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005250458405_AddDriverAndJourneyAndSensorsTables.cs" />
+    <Compile Include="Migrations\202005250458405_AddDriverAndJourneyAndSensorsTables.Designer.cs">
+      <DependentUpon>202005250458405_AddDriverAndJourneyAndSensorsTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005250500254_AddMessageTable.cs" />
+    <Compile Include="Migrations\202005250500254_AddMessageTable.Designer.cs">
+      <DependentUpon>202005250500254_AddMessageTable.cs</DependentUpon>
     </Compile>
     <Compile Include="VehicleSystemContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -64,6 +77,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005250403320_AddVehicleTable.resx">
       <DependentUpon>202005250403320_AddVehicleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005250458405_AddDriverAndJourneyAndSensorsTables.resx">
+      <DependentUpon>202005250458405_AddDriverAndJourneyAndSensorsTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005250500254_AddMessageTable.resx">
+      <DependentUpon>202005250500254_AddMessageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
