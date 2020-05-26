@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleSystem.Core", "Vehic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleSystem.Api", "VehicleSystem.Api\VehicleSystem.Api.csproj", "{A1977BCF-99AF-4EBD-80FC-1BAD94B1C531}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleSystem.Api.Tests", "VehicleSystem.Api.Tests\VehicleSystem.Api.Tests.csproj", "{B56162D6-91A2-42A5-B37B-4858B32C8125}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A1977BCF-99AF-4EBD-80FC-1BAD94B1C531}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1977BCF-99AF-4EBD-80FC-1BAD94B1C531}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1977BCF-99AF-4EBD-80FC-1BAD94B1C531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56162D6-91A2-42A5-B37B-4858B32C8125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56162D6-91A2-42A5-B37B-4858B32C8125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56162D6-91A2-42A5-B37B-4858B32C8125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56162D6-91A2-42A5-B37B-4858B32C8125}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
