@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using VehicleSystem.Core;
 using VehicleSystem.Core.Entities;
+using VehicleSystem.Core.Models;
 using VehicleSystem.Core.Services;
 
 namespace VehicleSystem.Api.Controllers
@@ -8,11 +9,8 @@ namespace VehicleSystem.Api.Controllers
     [RoutePrefix("vehicle")]
     public class VehicleController : Controller
     {
-        private readonly IVehicleService _vehicleService;
-
-        public VehicleController(IVehicleService vehicleService)
+        public VehicleController()
         {
-            _vehicleService = vehicleService;
         }
 
         [HttpGet]
@@ -23,9 +21,9 @@ namespace VehicleSystem.Api.Controllers
 
         [HttpPost]
         [Route("create")]
-        public long Create()
+        public long Create(VehicleModel vehicle)
         {
-            var vehicleId = _vehicleService.Create();
+            var vehicleId = new VehicleService().Create(vehicle);
             return vehicleId;
         }
 

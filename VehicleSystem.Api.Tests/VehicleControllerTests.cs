@@ -1,5 +1,6 @@
 ﻿using SpecLight;
 using VehicleSystem.Api.Controllers;
+using VehicleSystem.Core.Models;
 using VehicleSystem.Core.Services;
 using Xunit;
 
@@ -22,14 +23,18 @@ namespace VehicleSystem.Api.Tests
 
         public void RequestReceived()
         {
-            _controller = new VehicleController(new VehicleService());
+            _controller = new VehicleController();
         }
 
         public void CreateIsCalled()
         {
-            _vehicleId = _controller.Create();
+            _vehicleId = _controller.Create(new VehicleModel
+            {
+                Make = "TT",
+                Longitude = 50,
+                Latitude = 30
+            });
         }
-
 
         public void VehicleIsCreated()
         {
