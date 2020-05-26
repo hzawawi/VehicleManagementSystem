@@ -1,26 +1,25 @@
-﻿using System.Web.Mvc;
-using VehicleSystem.Core;
-using VehicleSystem.Core.Entities;
+﻿using System.Web.Http;
+using System.Web.Mvc;
 using VehicleSystem.Core.Models;
 using VehicleSystem.Core.Services;
 
 namespace VehicleSystem.Api.Controllers
 {
-    [RoutePrefix("vehicle")]
+    [System.Web.Mvc.RoutePrefix("vehicle")]
     public class VehicleController : Controller
     {
         public VehicleController()
         {
         }
 
-        [HttpGet]
+        [System.Web.Mvc.HttpGet]
         public string HealthCheck()
         {
             return "up";
         }
 
-        [HttpPost]
-        [Route("create")]
+        [System.Web.Mvc.HttpPost]
+        [System.Web.Mvc.Route("create")]
         public long Create(VehicleModel vehicle)
         {
             var vehicleId = new VehicleService().Create(vehicle);
@@ -28,18 +27,18 @@ namespace VehicleSystem.Api.Controllers
         }
 
 
-        [HttpPut]
-        [Route("update/{id:long}")]
-        public bool Update(long id)
+        [System.Web.Mvc.HttpPut]
+        [System.Web.Mvc.Route("update/{id:long}")]
+        public bool Update([FromUri]long id, VehicleModel vehicle)
         {
-            return true;
+            return new VehicleService().Update(id, vehicle); ;
         }
 
-        [HttpDelete]
-        [Route("delete/{id:long}")]
-        public bool Delete(long id)
+        [System.Web.Mvc.HttpDelete]
+        [System.Web.Mvc.Route("delete/{id:long}")]
+        public bool Delete([FromUri] long id)
         {
-            return true;
+            return new VehicleService().Delete(id);
         }
     }
 }
