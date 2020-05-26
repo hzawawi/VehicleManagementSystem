@@ -1,12 +1,20 @@
 ﻿using System.Web.Mvc;
 using VehicleSystem.Core;
 using VehicleSystem.Core.Entities;
+using VehicleSystem.Core.Services;
 
 namespace VehicleSystem.Api.Controllers
 {
     [RoutePrefix("vehicle")]
     public class VehicleController : Controller
     {
+        private readonly IVehicleService _vehicleService;
+
+        public VehicleController(IVehicleService vehicleService)
+        {
+            _vehicleService = vehicleService;
+        }
+
         [HttpGet]
         public string HealthCheck()
         {
@@ -17,18 +25,8 @@ namespace VehicleSystem.Api.Controllers
         [Route("create")]
         public long Create()
         {
-            using (var context = new VehicleSystemContext())
-            {
-                var vehicle = new Vehicle
-                {
-                    Make = "BMW",
-                    Longitude = 20.2f,
-                    Latitude = 25.4f
-                };
-                context.Vehicles.Add(vehicle);
-                context.SaveChanges();
-                return vehicle.Id;
-            }
+            var vehicleId = _vehicleService.Create();
+            return vehicleId;
         }
 
 
